@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080808">
+  <title>ROGUE | Calculadora</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <a class="brand" href="#" aria-label="ROGUE - início">
+          <img class="brand-logo" src="assets/rogue-logo.png" alt="Símbolo oficial da ROGUE">
+          <span class="brand-name">ROGUE<span class="brand-subtitle">SISTEMA DE LAVAGEM</span></span>
+        </a>
+        <div class="hero-copy">
+          <span class="eyebrow">PAINEL DE CONTROLE</span>
+          <h1>CALCULADORA <span>ROGUE</span></h1>
+          <p>Precisão, organização e controle em cada operação.</p>
+        </div>
+        <div class="hero-motto">DISCIPLINA <i>•</i> UNIÃO <i>•</i> RESPEITO</div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <section class="intro-row">
+        <div>
+          <span class="section-kicker">GESTÃO DE OPERAÇÕES</span>
+          <h2>Calcule sua divisão</h2>
+          <p>Informe o valor da operação e selecione a modalidade.</p>
+        </div>
+        <div class="status-pill"><span></span> SISTEMA OPERACIONAL</div>
+      </section>
+
+      <section class="calculator-card" aria-label="Calculadora de vendas">
+        <div class="card-watermark" aria-hidden="true"></div>
+        <div class="calculator-content">
+          <div class="form-section">
+            <label class="field-label" for="valor">VALOR TOTAL DA OPERAÇÃO</label>
+            <div class="amount-field">
+              <span class="currency">R$</span>
+              <input id="valor" type="number" min="0" step="0.01" placeholder="0,00" inputmode="decimal">
+            </div>
+
+            <div class="field-label mode-label">MODALIDADE DA OPERAÇÃO</div>
+            <div class="mode-selector">
+              <button class="mode-button active" type="button" data-mode="parceria" aria-pressed="true">
+                <span class="mode-title">PARCERIA</span>
+                <span class="mode-description">25% ROGUE / 75% parceiro</span>
+              </button>
+              <button class="mode-button" type="button" data-mode="pista" aria-pressed="false">
+                <span class="mode-title">PISTA</span>
+                <span class="mode-description">30% ROGUE / 70% pista</span>
+              </button>
+              <button class="mode-button" type="button" data-mode="membro" aria-pressed="false">
+                <span class="mode-title">MEMBRO</span>
+                <span class="mode-description">15% ROGUE / 85% membro</span>
+              </button>
+            </div>
+
+            <div class="commission-panel" id="commissionPanel">
+              <label class="commission-control" for="comissao">
+                <span class="custom-checkbox"><input id="comissao" type="checkbox"><span></span></span>
+                <span class="commission-copy">
+                  <strong>Aplicar comissão</strong>
+                  <small>20% sobre a parte da ROGUE</small>
+                </span>
+              </label>
+              <span class="commission-tag">OPCIONAL</span>
+            </div>
+          </div>
+
+          <div class="results-section">
+            <div class="results-heading">
+              <div>
+                <span class="section-kicker">RESUMO FINANCEIRO</span>
+                <h3>Resultado da operação</h3>
+              </div>
+              <span class="result-mark">R</span>
+            </div>
+
+            <div class="result-total">
+              <span>VALOR INFORMADO</span>
+              <strong id="total">R$ 0,00</strong>
+            </div>
+
+            <div class="result-lines">
+              <div class="result-line">
+                <span>Parte da ROGUE</span>
+                <strong id="faccao">R$ 0,00</strong>
+              </div>
+              <div class="result-line">
+                <span>Parte do parceiro / pista / membro</span>
+                <strong id="parceiro">R$ 0,00</strong>
+              </div>
+              <div class="result-line commission-result" id="commissionResult">
+                <span>Comissão (20%)</span>
+                <strong id="comissaoValor">R$ 0,00</strong>
+              </div>
+            </div>
+
+            <div class="net-result">
+              <span>VALOR FINAL PARA O CAIXA ROGUE</span>
+              <strong id="valorFinal">R$ 0,00</strong>
+              <small>Valor da ROGUE após eventual comissão.</small>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer"><span>ROGUE MANAGEMENT</span><span>DISCIPLINA • UNIÃO • RESPEITO</span></div>
+      </section>
+
+      <footer class="page-footer">
+        <span>ROGUE © <span id="currentYear">2026</span></span>
+        <span>SISTEMA INTERNO DE CONTROLE</span>
+      </footer>
+    </main>
+  </div>
+  <script>
+    const year = document.getElementById('currentYear');
+    if (year) year.textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
